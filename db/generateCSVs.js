@@ -3,8 +3,8 @@ const fs = require('fs');
 const path = require('path');
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 
-const handleProductCSV = () => {
-  for (let i = 1; i <= 20; i++) {
+const handleProductCSV = async () => {
+  // for (let i = 1; i <= 20; i++) {
     const sampleProducts = []; // 5 mil/2 files
     for (let j = 1; j <= 500000; j++) {
       //2500000
@@ -29,7 +29,7 @@ const handleProductCSV = () => {
     csvWriter
       .writeRecords(sampleProducts)
       .then(() => console.log('The PRODUCT CSV file was written successfully'));
-  }
+  // }
 };
 
 const handleVariantCSV = () => {
