@@ -15,7 +15,7 @@
     "dev:react": "webpack -d --watch",
     "build": "webpack --mode production",
     "db:setup": "node db/seed.js",
-    "create:seed": "node seeds/products.js",
+    "create:seed": "knex seed:run",
     "seed:maria": "mysql -u root < db/mariadb.sql"
   },
   "dependencies": {

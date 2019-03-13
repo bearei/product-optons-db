@@ -10,8 +10,8 @@ const env = 'development';
 const knex = require('knex')(config[env]);
 
 // without csv
-const seed = async (knex, Promise) => {
-  // console.time('seeded');
+exports.seed = async (knex, Promise) => {
+  console.time('seeded');
   for (let i = 0; i < 1000000; i++) {
     let sampleProducts = [];
     for (let j = 0; j < 10; j++) {
@@ -35,13 +35,13 @@ const seed = async (knex, Promise) => {
     }
     await knex('variants').insert(sampleVariants);
   }
-  // console.timeEnd('seeded');
+  console.timeEnd('seeded');
 };
 
-const runScriptSeed = async () => {
-  console.time('createcsvs');
-  await seed();
-  // await handleVariantCSV();
-  console.timeEnd('createcsvs');
-};
-runScriptSeed();
+// const runScriptSeed = async () => {
+//   console.time('createcsvs');
+//   await seed();
+//   // await handleVariantCSV();
+//   console.timeEnd('createcsvs');
+// };
+// runScriptSeed();
