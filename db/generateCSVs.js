@@ -4,9 +4,9 @@ const path = require('path');
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 
 const handleProductCSV = () => {
-  for (let i = 1; i <= 1; i++) {
+  for (let i = 1; i <= 20; i++) {
     const sampleProducts = []; // 5 mil/2 files
-    for (let j = 1; j <= 1; j++) {
+    for (let j = 1; j <= 500000; j++) {
       //2500000
       sampleProducts.push(generateFakeProduct());
     }
@@ -35,10 +35,10 @@ const handleProductCSV = () => {
 const handleVariantCSV = () => {
   let itemCounter = 1;
   let modulo = 0;
-  for (let i = 1; i <= 1; i++) {
+  for (let i = 1; i <= 60; i++) {
     const variants = [];
     //  3 variants per 1 products - 6 mil
-    for (let j = 1; j <= 10; j++) {
+    for (let j = 1; j <= 500000; j++) {
       //3000000
       const variantList = generateFakeVariants(itemCounter);
       modulo += 1;
