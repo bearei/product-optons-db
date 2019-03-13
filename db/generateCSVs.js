@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 
-const handleProductCSV = async () => {
+const handleProductCSV = () => {
   // for (let i = 1; i <= 20; i++) {
     const sampleProducts = []; // 5 mil/2 files
     for (let j = 1; j <= 500000; j++) {
@@ -11,7 +11,7 @@ const handleProductCSV = async () => {
       sampleProducts.push(generateFakeProduct());
     }
 
-    const pathway = path.join(__dirname, `../seeds/productData/productData${i}.csv`);
+    const pathway = path.join(__dirname, `../seeds/productData/productData${1}.csv`);
 
     const csvWriter = createCsvWriter({
       path: pathway,
